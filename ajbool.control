@@ -1,0 +1,6 @@
+# ajbool extension
+comment = 'a non null bool type'
+default_version = '0.0.1'
+module_pathname = '$libdir/ajbool'
+relocatable = true
+requires = ''
