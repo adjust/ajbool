@@ -1,4 +1,6 @@
 \pset null 'NULL'
+BEGIN;
+CREATE EXTENSION ajbool;
 SELECT true::ajbool, false::ajbool, NULL::bool::ajbool;
  ajbool | ajbool | ajbool 
 --------+--------+--------
@@ -27,3 +29,4 @@ SELECT COUNT(1) FROM test where not state;
      4
 (1 row)
 
+ROLLBACK;
