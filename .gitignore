@@ -23,4 +23,5 @@
 *.swp
 temp
 results
-bench/benchmarks*
+bench/benchmarks
+regression.*
