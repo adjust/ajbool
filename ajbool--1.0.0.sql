@@ -1,3 +1,6 @@
+-- complain if script is sourced in psql, rather than via CREATE EXTENSION
+\echo Use "CREATE EXTENSION ajbool" to load this file. \quit
+--source file sql/ajbool.sql
 CREATE FUNCTION ajbool_in(cstring)
 RETURNS ajbool
 AS 'MODULE_PATHNAME'
@@ -147,3 +150,4 @@ CREATE OPERATOR CLASS hash_ajbool_ops
     DEFAULT FOR TYPE ajbool USING hash AS
         OPERATOR        1       = ,
         FUNCTION        1       hash_ajbool(ajbool);
+ 
