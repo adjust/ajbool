@@ -10,18 +10,18 @@
       "ajbool": {
          "file": "sql/ajbool.sql",
          "version": "0.0.1",
-         "abstract": "Three-valued boolean with pseudo-NULL for primary keys",
+         "abstract": "Three-valued boolean with pseudo-NULL for primary keys"
       }
    },
    "meta-spec": {
      "version": "1.0.0",
      "url": "http://pgxn.org/meta/spec.txt"
    },
-   "description": "There are times you want a boolean value for a primary key but you want NULL/Unknown to be a single, distinct value.  The ajbool extension does this by marking unknown as a not null state for the purpose of this data type (but casts to bool as a true null)."
+   "description": "There are times you want a boolean value for a primary key but you want NULL/Unknown to be a single, distinct value.  The ajbool extension does this by marking unknown as a not null state for the purpose of this data type (but casts to bool as a true null).",
    "prereqs": {
       "runtime": {
         "requires": {
-           "PostgreSQL": "9.3.0",
+           "PostgreSQL": "9.3.0"
         }
       }
    },
