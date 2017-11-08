@@ -11,9 +11,17 @@ TESTS        = $(wildcard test/sql/*.sql)
 REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test --load-language=plpgsql --load-extension=ajbool
 PG_CPPFLAGS  = --std=c99 -Wall -Wextra -Wno-unused-parameter
+
 include $(PGXS)
+
+ifeq ($(shell test $(VERSION_NUM) -lt 90600; echo $$?),0)
+REGRESS := $(filter-out parallel_test, $(REGRESS))
+endif
 
 all: $(EXTENSION)--$(EXTVERSION).sql
 
-$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
-	cp $< $@
+$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql sql/parallel.sql
+	echo "-- complain if script is sourced in psql, rather than via CREATE EXTENSION" > $@
+	echo "\echo Use \"CREATE EXTENSION ${EXTENSION}\" to load this file. \quit" >> $@
+	echo "" >> $@
+	cat $^ >> $@
