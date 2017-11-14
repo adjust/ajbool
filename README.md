@@ -20,4 +20,11 @@ SELECT 't'::ajbool::bool, 'f'::ajbool::bool, 'u'::ajbool::bool;
  bool | bool | bool
 ------+------+------
  t    | f    | NULL
- ```
+
+```
+
+##Parallelism Support
+
+PostgreSQL 9.6 introduced parallelism safety markings for functions.
+The ajbool-00.0.1--0.0.2.sql in the extensions directory makrs these
+as safe.  You should run this file after upgrading PostgreSQL.

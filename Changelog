@@ -1,0 +1,8 @@
+Changelog
+
+0.0.2	2017-11-14
+	Added parallelism support for 9.6 and above
+	Note that the upgrade file must be run after upgrading postgreSQL too
+
+0.0.1	2017-11-10
+	Initial version
