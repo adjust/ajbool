@@ -1,15 +1,15 @@
 {
    "name": "ajbool",
    "abstract": "Three valued boolean with pseudo-NULL for primary keys",
-   "version": "0.0.1",
-   "maintainer": [ "Chris Travers <christravers@adjust.com>", "Manuel Kniep <rapimo@adjust.com>" ],
+   "version": "0.0.2",
+   "maintainer": [ "Chris Travers <chris.travers@adjust.com>", "Manuel Kniep <rapimo@adjust.com>" ],
    "license": {
       "PostgreSQL": "http://www.postgresql.org/about/licence"
    },
    "provides": { 
       "ajbool": {
          "file": "sql/ajbool.sql",
-         "version": "0.0.1",
+         "version": "0.0.2",
          "abstract": "Three-valued boolean with pseudo-NULL for primary keys"
       }
    },
