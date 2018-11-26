@@ -3,9 +3,9 @@
 #include "fmgr.h"
 
 typedef int8 ajbool;
-#define DatumGetAjBool(X) ((ajbool) GET_1_BYTE(X))
-#define AjBoolGetDatum(X) ((Datum) SET_1_BYTE(X))
 
+#define DatumGetAjBool(X) ((ajbool) (X))
+#define AjBoolGetDatum(X) ((Datum) (X))
 #define PG_GETARG_AJBOOL(n)    DatumGetAjBool(PG_GETARG_DATUM(n))
 #define PG_RETURN_AJBOOL(x)    return AjBoolGetDatum(x)
 
