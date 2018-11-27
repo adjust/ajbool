@@ -1,15 +1,22 @@
 sudo: required
 dist: xenial
 language: c
+before_install:
+   - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+   - curl -s -o - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+   - sudo apt-get update
 matrix:
    include:
      - addons: 
           postgresql: 9.3
           apt:
             packages:
+               - postgresql-9.3
+               - postgresql-client-9.3
                - postgresql-server-dev-9.3
        env:
           - POSTGRESQL=9.3
+          - PGPORT=5433
        install:
            - sudo make install
      - addons: 
@@ -48,6 +55,18 @@ matrix:
           - POSTGRESQL=10
        install:
            - sudo make install
+     - addons:
+          postgresql: 11
+          apt:
+            packages:
+               - postgresql-11
+               - postgresql-client-11
+               - postgresql-server-dev-11
+       env:
+          - POSTGRESQL=11
+          - PGPORT=5433
+       install:
+         - sudo make install
 script:
   - make installcheck
 after_failure:
