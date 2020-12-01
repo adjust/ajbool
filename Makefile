@@ -21,7 +21,6 @@ endif
 all: $(EXTENSION)--$(EXTVERSION).sql
 
 $(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql sql/parallel.sql
-	echo "-- complain if script is sourced in psql, rather than via CREATE EXTENSION" > $@
-	echo "\echo Use \"CREATE EXTENSION ${EXTENSION}\" to load this file. \quit" >> $@
-	echo "" >> $@
-	cat $^ >> $@
+	@printf -- "-- complain if script is sourced in psql, rather than via CREATE EXTENSION\n" > $@
+	@printf -- "\\\echo Use \"CREATE EXTENSION ${EXTENSION}\" to load this file. \quit\n\n" >> $@
+	@cat $^ >> $@
