@@ -1,3 +1,5 @@
+[![CI](https://github.com/adjust/ajbool/actions/workflows/main.yml/badge.svg)](https://github.com/adjust/ajbool/actions/workflows/main.yml)
+
 # ajbool
 
 A special boolean type that allows 'unknown' state without beeing NULL.
