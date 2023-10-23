@@ -1,6 +1,7 @@
 {
    "name": "ajbool",
    "abstract": "Three valued boolean with pseudo-NULL for primary keys",
+   "author": "adjustgmbh",
    "version": "0.0.2",
    "maintainer": [ "Chris Travers <chris.travers@adjust.com>", "Manuel Kniep <rapimo@adjust.com>" ],
    "license": {
@@ -12,6 +13,9 @@
          "version": "0.0.2",
          "abstract": "Three-valued boolean with pseudo-NULL for primary keys"
       }
+   },
+   "maintainers": {
+      "name": "adjustgmbh",
    },
    "meta-spec": {
      "version": "1.0.0",
