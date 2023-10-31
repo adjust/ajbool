@@ -1,21 +1,19 @@
 {
    "name": "ajbool",
    "abstract": "Three valued boolean with pseudo-NULL for primary keys",
-   "author": "adjustgmbh",
-   "version": "0.0.2",
-   "maintainer": [ "Chris Travers <chris.travers@adjust.com>", "Manuel Kniep <rapimo@adjust.com>" ],
+   "version": "0.0.3",
+   "maintainer" : [
+      "adjustgmbh"
+   ],
    "license": {
       "PostgreSQL": "http://www.postgresql.org/about/licence"
    },
    "provides": { 
       "ajbool": {
          "file": "sql/ajbool.sql",
-         "version": "0.0.2",
+         "version": "0.0.3",
          "abstract": "Three-valued boolean with pseudo-NULL for primary keys"
       }
-   },
-   "maintainers": {
-      "name": "adjustgmbh"
    },
    "meta-spec": {
      "version": "1.0.0",
@@ -25,7 +23,7 @@
    "prereqs": {
       "runtime": {
         "requires": {
-           "PostgreSQL": "9.3.0"
+           "PostgreSQL": "10.0"
         }
       }
    },
