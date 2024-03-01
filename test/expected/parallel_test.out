@@ -46,4 +46,5 @@ SELECT data, COUNT(*) FROM parallel_test GROUP BY 1;
                      ->  Parallel Seq Scan on public.parallel_test
                            Output: data
 (14 rows)
+
 ROLLBACK;
